@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Brand Name</th>
+            <th>Code</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let card of cards">
+            <td>{{ card.brand }}</td>
+            <td>{{ card.brandName }}</td>
+            <td>{{ card.code }}</td>
+            <td>
+              <button class="btn btn-sm" [ngClass]="{'btn-success': card.active, 'btn-danger': !card.active}" (click)="toggleActive(card)">
+                {{ card.active ? 'Ativo' : 'Inativo' }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
